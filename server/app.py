@@ -4,8 +4,10 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 import tensorflow.keras.activations as activations
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Carregar o modelo TFLite
 interpreter = tf.lite.Interpreter(model_path="models/model.tflite")
